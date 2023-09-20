@@ -1,0 +1,13 @@
+npm init                ==>  declara o package json | declara que faz uso de gerenciamento de pacote
+
+npm install express@4.18.2          ==> 
+
+localhost:8080
+
+localhost:8080/
+
+localhost:8080/hello
+
+localhost:8080/hello/:n
+
+localhost:8080/hello/gustavo
