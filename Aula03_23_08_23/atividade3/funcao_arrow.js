@@ -1,10 +1,8 @@
-// Função tradicional
-function somar(a, b) {
-  return a + b;
-}
+// Função arrow que calcula o quadrado de um número
+const calcularQuadrado = (numero) => numero * numero;
 
-// Função arrow para somar dois números
-const somarArrow = (a, b) => a + b;
+const numeros = [1, 2, 3, 4, 5];
 
-// Uso da função arrow
-console.log(somarArrow(5, 3)); // Saída: 8
+const quadrados = numeros.map(calcularQuadrado);
+
+console.log(quadrados);

@@ -1,22 +1,18 @@
-// Exemplo de uma Promise que simula uma operação assíncrona
-const fazerAlgoAssincrono = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const sucesso = true; // Altere para false para simular uma falha
-      if (sucesso) {
-        resolve("Operação bem-sucedida");
-      } else {
-        reject("Erro na operação");
-      }
-    }, 2000); // Simula uma operação que leva 2 segundos
-  });
-};
-
-// Uso da Promise
-fazerAlgoAssincrono()
-  .then((resultado) => {
-    console.log(resultado);
-  })
-  .catch((erro) => {
-    console.error(erro);
-  });
+// Criando uma Promise externa
+new Promise((resolveOuter) => {
+  // Resolvendo a Promise externa com uma Promise interna
+  resolveOuter(
+    new Promise((resolveInner) => {
+      // Simulando uma operação assíncrona com um atraso de 1 segundo
+      setTimeout(resolveInner, 1000);
+    }),
+  );
+})
+// Lidando com o sucesso da Promise externa
+.then(() => {
+  console.log("Promise externa resolvida");
+})
+// Lidando com qualquer erro na Promise externa
+.catch((error) => {
+  console.error("Erro na Promise externa", error);
+});
