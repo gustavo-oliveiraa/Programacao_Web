@@ -8,7 +8,13 @@ app.set('views', __dirname + '/views');
 
 app.use(express.urlencoded({extended: true}));
 
-    res.render('index.html', {usuario});
+ app.get('/', function (req, res) {
+    let usuario = {
+        nome: "Jota",
+        telefone: 123123
+    };
+
+    res.render('index.html', { usuario });
 });
 
 app.post('/dados', function (req, res) {
