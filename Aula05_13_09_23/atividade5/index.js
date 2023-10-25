@@ -8,12 +8,6 @@ app.set('views', __dirname + '/views');
 
 app.use(express.urlencoded({extended: true}));
 
-app.get('/', function (req, res) {
-    let usuario = {
-        nome: "Jota",
-        telefone: 123123 
-    };
-
     res.render('index.html', {usuario});
 });
 
