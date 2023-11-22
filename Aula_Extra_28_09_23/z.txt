@@ -1,0 +1,10 @@
+sempre especificar a versao (boas praticas)
+
+npm install express@4.18.2
+npm install mustache-express@1.3.2
+
+app.get('/', function (req, res) {
+    res.send('Olá, mundo!')
+});
+
+app.engine('html', mustacheExpresss());
